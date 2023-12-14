@@ -1,3 +1,4 @@
+#%%
 import gymnasium as gym
 import math
 import random
@@ -90,6 +91,8 @@ memory = ReplayMemory(10000)
 
 
 steps_done = 0
+
+#%%
 
 
 def select_action(state):
