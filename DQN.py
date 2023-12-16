@@ -1,4 +1,3 @@
-#%%
 import gymnasium as gym
 import math
 import random
@@ -24,10 +23,9 @@ plt.ion()
 # if GPU is to be used
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-print(device)
-
 Transition = namedtuple('Transition',
                         ('state', 'action', 'next_state', 'reward'))
+
 
 class ReplayMemory(object):
 
@@ -92,8 +90,6 @@ memory = ReplayMemory(10000)
 
 steps_done = 0
 
-#%%
-
 
 def select_action(state):
     global steps_done
@@ -115,7 +111,6 @@ episode_durations = []
 
 
 def plot_durations(show_result=False):
-    pass
     plt.figure(1)
     durations_t = torch.tensor(episode_durations, dtype=torch.float)
     if show_result:
@@ -234,3 +229,4 @@ print('Complete')
 plot_durations(show_result=True)
 plt.ioff()
 plt.show()
+
